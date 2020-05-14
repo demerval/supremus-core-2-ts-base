@@ -21,3 +21,4 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Enums = __importStar(require("./src/enums"));
 exports.Consulta = __importStar(require("./src/consulta"));
+exports.Persistir = __importStar(require("./src/persistir"));
