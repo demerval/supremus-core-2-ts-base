@@ -1,21 +1,27 @@
 import * as Enums from "./enums";
 
+export interface CampoFuncao {
+  key: string;
+  campo: string;
+  alias: string;
+  funcao?: Enums.FuncoesSql;
+}
 export interface ItemConsulta {
   key: string;
   tabela: string;
-  campos?: string[];
+  campos?: (string | CampoFuncao)[];
   joins?: ItemJoinConsulta[];
   criterios?: CampoCriterio[];
   ordem?: string[];
   subConsultas?: SubConsulta[];
-  paginado?: { pagina: number, qtdeRegistros: number, funcoes?: { key: string, campo: string, alias: string, funcao?: Enums.FuncoesSql }[] };
+  paginado?: { pagina: number, qtdeRegistros: number, funcoes?: CampoFuncao[] };
   porId?: { id: any };
 }
 
 export interface ItemJoinConsulta {
   key: string;
   tabela: string;
-  campos?: string[];
+  campos?: (string | CampoFuncao)[];
   joinTipo?: 'inner' | 'left' | 'right';
   joinOn: [string, [string, string]],
   criterios?: CampoCriterio[];
