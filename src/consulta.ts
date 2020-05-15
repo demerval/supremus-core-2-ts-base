@@ -1,5 +1,14 @@
 import * as Enums from "./enums";
 
+export interface CampoConsulta {
+  keyTabela: string;
+  nomeCampo: string;
+  alias: string;
+  keyCampo: string;
+  tipo: Enums.FieldType;
+  funcao?: Enums.FuncoesSql;
+}
+
 export interface CampoFuncao {
   key: string;
   campo: string;
@@ -45,13 +54,13 @@ export interface SqlConsultaConfig {
 
 export interface SubConsultaConfig {
   link: [string, string];
-  campos: [string, string, string, string, Enums.FieldType][];
+  campos: CampoConsulta[];
   row: Record<string, any>;
 }
 
 export interface ConsultaConfig {
   configs: Map<string, SqlConsultaConfig>;
-  campos: [string, string, string, string, Enums.FieldType][];
+  campos: CampoConsulta[];
   sql: string;
   sqlTotal?: string;
 }
