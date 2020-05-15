@@ -8,10 +8,12 @@ export interface CampoConsulta {
     funcao?: Enums.FuncoesSql;
 }
 export interface CampoFuncao {
-    key: string;
     campo: string;
     alias: string;
     funcao?: Enums.FuncoesSql;
+}
+export interface CampoFuncaoPaginado extends CampoFuncao {
+    key: string;
 }
 export interface ItemConsulta {
     key: string;
@@ -24,7 +26,7 @@ export interface ItemConsulta {
     paginado?: {
         pagina: number;
         qtdeRegistros: number;
-        funcoes?: CampoFuncao[];
+        funcoes?: CampoFuncaoPaginado[];
     };
     porId?: {
         id: any;
