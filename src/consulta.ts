@@ -1,5 +1,10 @@
 import * as Enums from "./enums";
 
+export interface ConsultaSql {
+  key: string;
+  sql: string;
+}
+
 export interface CampoConsulta {
   keyTabela: string;
   nomeCampo: string;
