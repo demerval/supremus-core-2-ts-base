@@ -29,7 +29,7 @@ export interface ItemConsulta {
   tabela: string;
   campos?: (string | CampoFuncao)[];
   joins?: ItemJoinConsulta[];
-  criterios?: CampoCriterio[];
+  criterios?: (CampoCriterio | CampoCriterio[])[];
   ordem?: string[];
   subConsultas?: SubConsulta[];
   paginado?: { pagina: number, qtdeRegistros: number, funcoes?: CampoFuncaoPaginado[] };
