@@ -42,7 +42,7 @@ export interface ItemJoinConsulta {
   campos?: (string | CampoFuncao)[];
   joinTipo?: 'inner' | 'left' | 'right';
   joinOn: [string, [string, string]],
-  criterios?: CampoCriterio[];
+  criterios?: (CampoCriterio | CampoCriterio[])[];
 }
 
 export interface CampoCriterio {
@@ -58,7 +58,7 @@ export interface SubConsulta extends ItemConsulta {
 
 export interface SqlConsultaConfig {
   tabela: string;
-  criterios?: CampoCriterio[];
+  criterios?: (CampoCriterio | CampoCriterio[])[];
 }
 
 export interface SubConsultaConfig {
