@@ -3,7 +3,7 @@ import { ItemConsulta } from './consulta';
 
 export interface ConfigPersist {
   persistir: ItemPersist[];
-  persistirSql: ItemPersistSql[];
+  persistirSql?: ItemPersistSql[];
   consultar?: ItemPersitConsulta[];
 }
 
